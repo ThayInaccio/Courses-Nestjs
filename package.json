@@ -1,5 +1,5 @@
 {
-  "name": "poc-nestjs",
+  "name": "courses-nestjs",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -36,7 +36,8 @@
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
-    "typeorm": "0.2.29"
+    "typeorm": "0.2.29",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.0.0",
@@ -59,7 +60,8 @@
     "ts-loader": "^9.2.3",
     "ts-node": "^10.0.0",
     "tsconfig-paths": "^3.10.1",
-    "typescript": "^4.3.5"
+    "typescript": "^4.3.5",
+    "webpack": "^5.72.0"
   },
   "jest": {
     "moduleFileExtensions": [

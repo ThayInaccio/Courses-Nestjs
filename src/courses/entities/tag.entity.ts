@@ -1,31 +1,24 @@
 import {
-  JoinTable,
+  BeforeInsert,
   Column,
+  CreateDateColumn,
   Entity,
   ManyToMany,
   PrimaryGeneratedColumn,
-  CreateDateColumn,
-  BeforeInsert,
 } from 'typeorm';
-import { Tag } from './tag.entity';
+import { Course } from './course.entity';
 import { v4 as uuidv4 } from 'uuid';
 
-@Entity()
-export class Course {
+@Entity('tags')
+export class Tag {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
   name: string;
 
-  @Column()
-  description: string;
-
-  @JoinTable({ name: 'courses_tags' })
-  @ManyToMany((type) => Tag, (tag: Tag) => tag.courses, {
-    cascade: true,
-  })
-  tags: Tag[];
+  @ManyToMany(() => Course, (course: Course) => course.tags)
+  courses: Course[];
 
   @CreateDateColumn({ type: 'timestamp' })
   created_at: Date;
@@ -35,6 +28,7 @@ export class Course {
     if (this.id) {
       return;
     }
+
     this.id = uuidv4();
   }
 }
