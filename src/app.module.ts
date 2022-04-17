@@ -17,7 +17,7 @@ dotenv.config();
       password: 'docker',
       database: 'cursonestjs',
       entities: [__dirname + '/**/*.entity.js'],
-      autoLoadEntities: true,
+      autoLoadEntities: false,
       synchronize: false, //usar apenas em dev
     }),
   ],
